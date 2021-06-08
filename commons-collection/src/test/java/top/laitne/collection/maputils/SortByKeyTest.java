@@ -15,7 +15,7 @@ import java.util.Map;
  * @Date: 21-6-8
  * @Description:
  */
-public class ToLinkedTest {
+public class SortByKeyTest {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private int dataSize;
@@ -36,7 +36,7 @@ public class ToLinkedTest {
 
     @Test
     public void testToLinkedByComparable() {
-        LinkedHashMap<Integer, Object> linkedHashMap = MapUtils.toLinked(byComparable);
+        LinkedHashMap<Integer, Object> linkedHashMap = MapUtils.sort(byComparable);
         Integer[] keys = linkedHashMap.keySet().toArray(new Integer[]{});
 
         Assert.assertEquals(dataSize, keys.length);
@@ -51,7 +51,7 @@ public class ToLinkedTest {
 
     @Test
     public void testToLinkedUsingComparator() {
-        LinkedHashMap<String, Object> linkedHashMap = MapUtils.toLinked(usingComparator, String.CASE_INSENSITIVE_ORDER);
+        LinkedHashMap<String, Object> linkedHashMap = MapUtils.sort(usingComparator, String.CASE_INSENSITIVE_ORDER);
         String[] keys = linkedHashMap.keySet().toArray(new String[]{});
 
         Assert.assertEquals(dataSize, keys.length);

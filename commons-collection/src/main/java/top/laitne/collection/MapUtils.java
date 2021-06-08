@@ -16,7 +16,7 @@ public final class MapUtils {
         return null == map || map.size() == 0;
     }
 
-    public static <K extends Comparable<K>, V> LinkedHashMap<K, V> toLinked(Map<K, V> map) {
+    public static <K extends Comparable<K>, V> LinkedHashMap<K, V> sort(Map<K, V> map) {
         LinkedHashMap<K, V> linkedHashMap = new LinkedHashMap<>();
         if (isEmpty(map)) {
             return linkedHashMap;
@@ -33,7 +33,7 @@ public final class MapUtils {
         return linkedHashMap;
     }
 
-    public static <K, V> LinkedHashMap<K, V> toLinked(Map<K, V> map, Comparator<K> comparator) {
+    public static <K, V> LinkedHashMap<K, V> sort(Map<K, V> map, Comparator<K> comparator) {
         LinkedHashMap<K, V> linkedHashMap = new LinkedHashMap<>();
         if (isEmpty(map)) {
             return linkedHashMap;
@@ -50,6 +50,10 @@ public final class MapUtils {
         return linkedHashMap;
     }
 
+
+
+
     private MapUtils() {
+
     }
 }
