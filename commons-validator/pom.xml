@@ -29,7 +29,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>laitnet.top</groupId>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>top.laitne</groupId>
             <artifactId>commons-regex</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
