@@ -2,21 +2,18 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>commons-tools</artifactId>
+        <groupId>top.laitne</groupId>
+        <version>1.0.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>top.laitne</groupId>
-    <artifactId>commons-tools</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <artifactId>commons-collection</artifactId>
 
-    <name>commons-tools</name>
+    <name>commons-collection</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
-    <modules>
-        <module>commons-validator</module>
-        <module>commons-regex</module>
-        <module>commons-collection</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
