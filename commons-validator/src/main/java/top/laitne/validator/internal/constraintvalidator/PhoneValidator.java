@@ -15,9 +15,19 @@ import java.util.regex.Pattern;
 public class PhoneValidator implements ConstraintValidator<Phone, String> {
     private boolean isAllowPhoneCall;
 
+    private String phonePattern;
+
+    private String phoneCallPattern;
+
     @Override
     public void initialize(Phone constraintAnnotation) {
         this.isAllowPhoneCall = constraintAnnotation.allowPhoneCall();
+
+        String phonePattern = constraintAnnotation.phonePattern();
+        this.phonePattern = 0 == phonePattern.length() ? PhoneRegex.PHONE_PATTERN : phonePattern;
+
+        String phoneCallPattern = constraintAnnotation.phoneCallPattern();
+        this.phoneCallPattern = 0 == phoneCallPattern.length() ? PhoneRegex.PHONE_CALL_PATTERN : phoneCallPattern;
     }
 
     @Override
@@ -27,8 +37,8 @@ public class PhoneValidator implements ConstraintValidator<Phone, String> {
         }
 
         return
-                Pattern.matches(PhoneRegex.PHONE_PATTERN, value)
+                Pattern.matches(phonePattern, value)
                         ||
-                        (isAllowPhoneCall && Pattern.matches(PhoneRegex.PHONE_CALL_PATTERN, value));
+                        (isAllowPhoneCall && Pattern.matches(phoneCallPattern, value));
     }
 }

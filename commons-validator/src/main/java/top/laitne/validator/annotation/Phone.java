@@ -1,5 +1,6 @@
 package top.laitne.validator.annotation;
 
+import top.laitne.regex.PhoneRegex;
 import top.laitne.validator.internal.constraintvalidator.PhoneValidator;
 
 import javax.validation.Constraint;
@@ -20,6 +21,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = {PhoneValidator.class})
 public @interface Phone {
     boolean allowPhoneCall() default false; // 是否允许座机号
+
+    String phonePattern(); // 手机号正则表达式
+
+    String phoneCallPattern() default PhoneRegex.PHONE_CALL_PATTERN; // 座机号正则表达式
 
     String message() default "手机号格式不正确";
 
