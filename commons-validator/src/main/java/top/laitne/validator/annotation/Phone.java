@@ -22,7 +22,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface Phone {
     boolean allowPhoneCall() default false; // 是否允许座机号
 
-    String phonePattern(); // 手机号正则表达式
+    String phonePattern() default PhoneRegex.PHONE_PATTERN; // 手机号正则表达式
 
     String phoneCallPattern() default PhoneRegex.PHONE_CALL_PATTERN; // 座机号正则表达式
 

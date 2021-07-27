@@ -34,10 +34,9 @@ public final class PhoneRegex {
     /**
      * 仅手机号格式校验
      */
-    public static final String PHONE_PATTERN = new StringBuilder(300)
-            .append(CHINA_MOBILE_PATTERN).append("|")
-            .append(CHINA_TELECOM_PATTERN).append("|")
-            .append(CHINA_UNICOM_PATTERN).toString();
+    public static final String PHONE_PATTERN = CHINA_MOBILE_PATTERN + "|" +
+            CHINA_TELECOM_PATTERN + "|" +
+            CHINA_UNICOM_PATTERN + "|";
 
     private PhoneRegex() {
 
